@@ -1,19 +1,14 @@
 
 //  bot version  //
 
-// 1.1.0
+// 1.1.1
 // MAJOR.MINOR.PATCH
-// discord.js => seyfert
 
 
 
 //  notes  //
 
-// https://www.seyfert.dev/docs/learn/getting-started
-// changed from js main to ts main
-// uses .env file for token
-// uses seyfert's built-in command and event handler
-// commands and events are automatically loaded by seyfert
+// fixed and issue with slash commands not being registered properly
 
 
 
@@ -50,9 +45,12 @@ async function startBot() {
         // connect to discord and load commands and events
         await client.start();
 
+        console.log("[PRISM] Bot started successfully!");
+
         // register application commands with discord
         await client.uploadCommands();
 
+        console.log("[PRISM] Application commands uploaded successfully!");
     } catch (error) {
         console.error("[PRISM] Failed to start:", error);
         process.exitCode = 1;
