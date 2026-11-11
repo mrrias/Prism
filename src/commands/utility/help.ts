@@ -1,12 +1,9 @@
-
 import {
     Declare,
     Command,
     type CommandContext,
     MessageFlags
 } from "seyfert";
-
-
 
 //  command information  //
 
@@ -15,16 +12,14 @@ import {
     description: "Send quick guide and resources to help make things easier here at Prism."
 })
 
-
-
 //  command execution  //
 
-export default class PingCommand extends Command {
+export default class HelpCommand extends Command {
     async run(ctx: CommandContext) {
+        await ctx.deferReply(true);
 
-        await ctx.write({
-            content: "This command is currently under development :(",
-            flags: MessageFlags.Ephemeral
-        })
+        await ctx.editOrReply({
+            content: "This command is currently under development :("
+        });
     }
 }

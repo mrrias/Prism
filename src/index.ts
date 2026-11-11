@@ -1,26 +1,14 @@
 
 //  bot version  //
 
-// 1.2.0
+// 1.2.1
 // MAJOR.MINOR.PATCH
 
 
 
 //  notes  //
 
-// issues with git unresolved
-/*
-
-git log --oneline
-git reset --hard 6d4e0d4
-
-*/
-// reverted back to old commit and checked the remote
-// was not able to get commits working again so have switched to fresh repo
-
-// added embeds for demo and ephemeral reply for help
-
-// Due to issues with git and the previous repo code has been moved to a new repo.
+// troubleshooting command errors in new deployment
 
 
 
