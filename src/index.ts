@@ -1,14 +1,14 @@
 
 //  bot version  //
 
-// 1.2.1
+// 1.3.0
 // MAJOR.MINOR.PATCH
 
 
 
 //  notes  //
 
-// troubleshooting command errors in new deployment
+// help command content updates
 
 
 

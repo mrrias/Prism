@@ -2,17 +2,10 @@
 //  bot version  //
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.client = void 0;
-// 1.1.3
+// 1.3.0
 // MAJOR.MINOR.PATCH
 //  notes  //
-// issues with git resolved
-/*
-
-git log --oneline
-git reset --hard 6d4e0d4
-
-*/
-// reverted back to old commit
+// help command content updates
 //  requirements  //
 require("dotenv/config");
 const seyfert_1 = require("seyfert");
