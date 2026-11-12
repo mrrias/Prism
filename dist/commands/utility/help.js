@@ -8,12 +8,14 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 Object.defineProperty(exports, "__esModule", { value: true });
 const seyfert_1 = require("seyfert");
 //   command information  //
-const guideContainer = new seyfert_1.Container().addComponents(new seyfert_1.TextDisplay().setContent("# Welcome to the Prism!\n\n" +
-    "Here is everything you need to know to get started and navigate your way around."), new seyfert_1.TextDisplay().setContent("### Useful Channels\n" +
-    "- [**Announcements:**](https://discord.com/channels/1566781855183667250/1566794245438705734) Check here for updates and news.\n" +
-    "- [**Rules:**](https://discord.com/channels/1566781855183667250/1566794255928922122) Update yourself on the rules here.\n" +
-    "- [**General:**](https://discord.com/channels/1566781855183667250/1568919135256191016) Our main community chat.\n" +
-    "- [**Feedback & Help:**](https://discord.com/channels/1566781855183667250/1568920045747306598) Ping staff here with any feedback or questions."));
+const guideContainer = new seyfert_1.Container()
+    .setColor(0xff99e9)
+    .addComponents(new seyfert_1.TextDisplay().setContent("# Welcome to the Prism!\n\n" +
+    "Here is everything you need to know to get started and navigate your way around."), new seyfert_1.Separator().setDivider(true), new seyfert_1.TextDisplay().setContent("### Useful Channels\n" +
+    "* https://discord.com/channels/1566781855183667250/1566794245438705734**:** Check here for updates and news.\n" +
+    "* https://discord.com/channels/1566781855183667250/1566794255928922122**:** Update yourself on the rules here.\n" +
+    "* https://discord.com/channels/1566781855183667250/1568919135256191016**:** Our main community chat.\n" +
+    "* https://discord.com/channels/1566781855183667250/1568920045747306598**:** Ping staff here with any feedback or questions."));
 let ServerGuideCommand = class ServerGuideCommand extends seyfert_1.Command {
     async run(ctx) {
         await ctx.write({
