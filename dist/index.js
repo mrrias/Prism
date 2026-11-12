@@ -2,7 +2,7 @@
 //  bot version  //
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.client = void 0;
-// 1.3.0
+// 1.4.0
 // MAJOR.MINOR.PATCH
 //  notes  //
 // help command content updates
