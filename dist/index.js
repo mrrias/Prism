@@ -2,29 +2,11 @@
 //  bot version  //
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.client = void 0;
-// 1.5.4
+// 1.5.5
 // MAJOR.MINOR.PATCH
 //  notes  //
-// const embed = new Embed()
-//     .setTitle("Prism Tickets")
-//     .setDescription(
-//         "Open a ticket by clicking below."
-//     )
-//     .setColor("#ff99e9");
-// // create button //
-// const button = new Button()
-//     .setCustomId("ticket:create")
-//     .setLabel("Open Ticket")
-//     .setStyle(ButtonStyle.Primary);
-// // create action row //
-// const row = new ActionRow<Button>()
-//     .setComponents([button]);
-// // send panel //
-// await ctx.write({
-//     embeds: [embed],
-//     components: [row]
-// });
-// panel.ts formatted according to code in help.ts
+// Colour updates
+// Minor format updates
 //  requirements  //
 require("dotenv/config");
 const seyfert_1 = require("seyfert");

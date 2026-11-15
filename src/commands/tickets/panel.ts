@@ -8,14 +8,20 @@ import {
     ActionRow,
     Button,
     ButtonStyle,
+    Separator,
 } from "seyfert";
 
 
 
 //  command information  //
 
-const container = new Container().addComponents(
-    new TextDisplay().setContent("### Prism Tickets\nOpen a ticket by clicking below.")
+const container = new Container()
+.setColor(0xff99e9)
+.addComponents(
+    new TextDisplay().setContent(
+        "### Prism Tickets \n" +
+        "Open a ticket below."
+    )
 );
 
 const button = new Button()

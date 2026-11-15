@@ -8,7 +8,10 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 Object.defineProperty(exports, "__esModule", { value: true });
 const seyfert_1 = require("seyfert");
 //  command information  //
-const container = new seyfert_1.Container().addComponents(new seyfert_1.TextDisplay().setContent("### Prism Tickets\nOpen a ticket by clicking below."));
+const container = new seyfert_1.Container()
+    .setColor(0xff99e9)
+    .addComponents(new seyfert_1.TextDisplay().setContent("### Prism Tickets \n" +
+    "Open a ticket below."));
 const button = new seyfert_1.Button()
     .setCustomId("ticket:create")
     .setLabel("Open Ticket")
