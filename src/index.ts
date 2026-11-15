@@ -1,14 +1,14 @@
 
 //  bot version  //
 
-// 1.4.0
+// 1.5.0
 // MAJOR.MINOR.PATCH
 
 
 
 //  notes  //
 
-// help command content updates
+// bug report cmd added and demo cmd removed
 
 
 
