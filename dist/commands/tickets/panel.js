@@ -1,6 +1,4 @@
 "use strict";
-// AI assistance
-// needs to be reviewed and properly edited
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -9,19 +7,16 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const seyfert_1 = require("seyfert");
+//  command information  //
+const container = new seyfert_1.Container().addComponents(new seyfert_1.TextDisplay().setContent("### Prism Tickets\nOpen a ticket by clicking below."));
+const button = new seyfert_1.Button()
+    .setCustomId("ticket:create")
+    .setLabel("Open Ticket")
+    .setStyle(seyfert_1.ButtonStyle.Primary);
+const row = new seyfert_1.ActionRow()
+    .setComponents([button]);
 let TicketPanel = class TicketPanel extends seyfert_1.Command {
     async run(ctx) {
-        // create components v2 container //
-        const container = new seyfert_1.Container().addComponents(new seyfert_1.TextDisplay().setContent("### Prism Tickets\nOpen a ticket by clicking below."));
-        // create button //
-        const button = new seyfert_1.Button()
-            .setCustomId("ticket:create")
-            .setLabel("Open Ticket")
-            .setStyle(seyfert_1.ButtonStyle.Primary);
-        // create action row //
-        const row = new seyfert_1.ActionRow()
-            .setComponents([button]);
-        // send panel using components v2 flag //
         await ctx.write({
             components: [container, row],
             flags: seyfert_1.MessageFlags.IsComponentsV2
@@ -33,5 +28,6 @@ TicketPanel = __decorate([
         name: "panel",
         description: "Create the support ticket panel"
     })
+    //  command execution  //
 ], TicketPanel);
 exports.default = TicketPanel;
