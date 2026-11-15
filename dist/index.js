@@ -2,10 +2,8 @@
 //  bot version  //
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.client = void 0;
-// 1.5.3
+// 1.5.4
 // MAJOR.MINOR.PATCH
-// I didn't commit the original pannel code so version gone from 1.5.1 => 1.5.3
-// to account for the forgotten version commit
 //  notes  //
 // const embed = new Embed()
 //     .setTitle("Prism Tickets")
@@ -26,11 +24,7 @@ exports.client = void 0;
 //     embeds: [embed],
 //     components: [row]
 // });
-// the above is the original panel.ts code
-// AI then rewrote to components v2
-// code will be reviewed
-// panel needs full redesign and code needs to be formatted in acordance to the rest of this project
-// also will be adding in the ticket system soon
+// panel.ts formatted according to code in help.ts
 //  requirements  //
 require("dotenv/config");
 const seyfert_1 = require("seyfert");
