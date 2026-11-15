@@ -36,7 +36,7 @@ export default class BugReportCommand extends Command {
         try {
             const user = await ctx.client.users.fetch(targetUserId);
             await user.write({
-                content: `**New Bug Report**\n**From:** <@${ctx.author.id}> (${ctx.author.username})\n**Report:**\n> ${bug}`
+                content: `## New Bug Report \n**From:** <@${ctx.author.id}> (${ctx.author.username})\n**Report:**\n> ${bug}`
             });
 
             await ctx.write({

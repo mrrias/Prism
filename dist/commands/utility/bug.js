@@ -21,7 +21,7 @@ let BugReportCommand = class BugReportCommand extends seyfert_1.Command {
         try {
             const user = await ctx.client.users.fetch(targetUserId);
             await user.write({
-                content: `🐛 **New Bug Report**\n**From:** <@${ctx.author.id}> (${ctx.author.username})\n**Report:**\n> ${bug}`
+                content: `## New Bug Report \n**From:** <@${ctx.author.id}> (${ctx.author.username})\n**Report:**\n> ${bug}`
             });
             await ctx.write({
                 content: "Your bug report has been successfully sent!",
