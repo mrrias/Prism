@@ -1,14 +1,12 @@
 
 //  bot version  //
 
-// 1.5.5
-// MAJOR.MINOR.PATCH
+// 1.6
 
 
 //  notes  //
 
-// Colour updates
-// Minor format updates
+// ticket system added
 
 
 //  requirements  //

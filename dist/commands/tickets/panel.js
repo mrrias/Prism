@@ -19,17 +19,49 @@ const button = new seyfert_1.Button()
 const row = new seyfert_1.ActionRow()
     .setComponents([button]);
 let TicketPanel = class TicketPanel extends seyfert_1.Command {
-    async run(ctx) {
+    async onPermissionsFail(ctx) {
         await ctx.write({
-            components: [container, row],
-            flags: seyfert_1.MessageFlags.IsComponentsV2
+            content: "Only server administrators can create the ticket panel.",
+            flags: seyfert_1.MessageFlags.Ephemeral
         });
+    }
+    async run(ctx) {
+        if (!ctx.inGuild()) {
+            await ctx.write({
+                content: "The ticket panel can only be created in a server.",
+                flags: seyfert_1.MessageFlags.Ephemeral
+            });
+            return;
+        }
+        if (!ctx.member.permissions.has(seyfert_1.PermissionFlagsBits.Administrator)) {
+            await ctx.write({
+                content: "Only server administrators can create the ticket panel.",
+                flags: seyfert_1.MessageFlags.Ephemeral
+            });
+            return;
+        }
+        await ctx.deferReply(true);
+        try {
+            await ctx.client.messages.write(ctx.channelId, {
+                components: [container, row],
+                flags: seyfert_1.MessageFlags.IsComponentsV2
+            });
+            ctx.client.logger.info(`[TICKETS] Panel posted in channel ${ctx.channelId} by user ${ctx.author.id} in guild ${ctx.guildId}`);
+            await ctx.deleteResponse();
+        }
+        catch (error) {
+            console.error("[PRISM] Failed to post ticket panel:", error);
+            await ctx.editOrReply({
+                content: "The ticket panel could not be posted. Please try again or contact a server administrator."
+            });
+        }
     }
 };
 TicketPanel = __decorate([
     (0, seyfert_1.Declare)({
         name: "panel",
-        description: "Create the support ticket panel"
+        description: "Create the support ticket panel",
+        defaultMemberPermissions: ["Administrator"]
     })
     //  command execution  //
 ], TicketPanel);

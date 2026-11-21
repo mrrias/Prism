@@ -2,11 +2,9 @@
 //  bot version  //
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.client = void 0;
-// 1.5.5
-// MAJOR.MINOR.PATCH
+// 1.6
 //  notes  //
-// Colour updates
-// Minor format updates
+// ticket system added
 //  requirements  //
 require("dotenv/config");
 const seyfert_1 = require("seyfert");
