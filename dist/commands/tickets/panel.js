@@ -7,17 +7,23 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const seyfert_1 = require("seyfert");
+const types_1 = require("../../tickets/types");
 //  command information  //
 const container = new seyfert_1.Container()
     .setColor(0xff99e9)
     .addComponents(new seyfert_1.TextDisplay().setContent("### Prism Tickets \n" +
-    "Open a ticket below."));
-const button = new seyfert_1.Button()
-    .setCustomId("ticket:create")
-    .setLabel("Open Ticket")
-    .setStyle(seyfert_1.ButtonStyle.Primary);
+    "Choose a ticket type below to get started."));
+const selectMenu = new seyfert_1.StringSelectMenu()
+    .setCustomId("ticket:category")
+    .setPlaceholder("Choose a ticket type")
+    .setValuesLength({ min: 1, max: 1 })
+    .setOptions(Object.entries(types_1.ticketTypeLabels).map(([value, label]) => ({
+    label,
+    value,
+    description: `${label} support`
+})));
 const row = new seyfert_1.ActionRow()
-    .setComponents([button]);
+    .setComponents([selectMenu]);
 let TicketPanel = class TicketPanel extends seyfert_1.Command {
     async onPermissionsFail(ctx) {
         await ctx.write({

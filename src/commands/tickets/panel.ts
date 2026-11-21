@@ -6,10 +6,10 @@ import {
     Container,
     TextDisplay,
     ActionRow,
-    Button,
-    ButtonStyle,
+    StringSelectMenu,
     PermissionFlagsBits,
 } from "seyfert";
+import { ticketTypeLabels } from "../../tickets/types";
 
 
 
@@ -20,17 +20,24 @@ const container = new Container()
 .addComponents(
     new TextDisplay().setContent(
         "### Prism Tickets \n" +
-        "Open a ticket below."
+        "Choose a ticket type below to get started."
     )
 );
 
-const button = new Button()
-    .setCustomId("ticket:create")
-    .setLabel("Open Ticket")
-    .setStyle(ButtonStyle.Primary);
+const selectMenu = new StringSelectMenu()
+    .setCustomId("ticket:category")
+    .setPlaceholder("Choose a ticket type")
+    .setValuesLength({ min: 1, max: 1 })
+    .setOptions(
+        Object.entries(ticketTypeLabels).map(([value, label]) => ({
+            label,
+            value,
+            description: `${label} support`
+        }))
+    );
 
-const row = new ActionRow<Button>()
-    .setComponents([button]);
+const row = new ActionRow<StringSelectMenu>()
+    .setComponents([selectMenu]);
 
 
 @Declare({

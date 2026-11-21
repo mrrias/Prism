@@ -2,9 +2,9 @@
 //  bot version  //
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.client = void 0;
-// 1.6
+// 2.0
 //  notes  //
-// ticket system added
+// ticket system finalised
 //  requirements  //
 require("dotenv/config");
 const seyfert_1 = require("seyfert");

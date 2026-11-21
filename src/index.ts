@@ -1,12 +1,12 @@
 
 //  bot version  //
 
-// 1.6
+// 2.0
 
 
 //  notes  //
 
-// ticket system added
+// ticket system finalised
 
 
 //  requirements  //
